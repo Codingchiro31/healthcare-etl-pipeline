@@ -1,5 +1,5 @@
 -- Query: Advanced Payment Adoption
--- Description: 
+-- Description: Measures SNF 3-day rule waiver adoption across track types and levels, including adoption percentage. This waiver allows ACOs to reduce unnecessary hospital stays before skilled nursing facility placement.
 -- Table: healthcare_records
 -- Author: Tevin S.
 -- Date: 2026-03
