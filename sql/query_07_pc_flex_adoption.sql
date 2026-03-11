@@ -1,5 +1,5 @@
 -- Query: PC Flex Agreement Status Distribution
--- Description: 
+-- Description: Breaks down Primary Care Flex agreement status across track types, reflecting ACO engagement with CMS's newer primary care payment flexibility initiative.
 -- Table: healthcare_records
 -- Author: Tevin S.
 -- Date: 2026-03
