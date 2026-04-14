@@ -54,8 +54,8 @@ def extract_data(limit: int = 1000) -> list:
 
             logger.info(f"Records returned: {len(data)}")
 
-            timestamp = datetime.utcnow().strftime('%Y%m%d_%H%M%S')
-            output_path = Path(f"raw_data_{timestamp}.json")
+            timestamp = datetime.now(timezone.utc).strftime('%Y%m%d_%H%M%S')
+            output_path = Path(f"raw_data_latest.json")
             with open(output_path, 'w') as f:
                 json.dump(data, f, indent=2)
 
