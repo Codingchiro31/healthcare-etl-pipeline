@@ -24,7 +24,7 @@ RETRY_DELAY = 5  # seconds between retries
 def extract_data(limit: int = 1000) -> list:
     """
     Pull Medicare ACO data from CMS API and save raw response to JSON.
-    Retries up to MAX_RETRIES times on failure with exponential backoff.
+    Retries up to MAX_RETRIES times on failure with linear backoff.
 
     Args:
         limit: Number of records to fetch (default 1000)
@@ -72,7 +72,7 @@ def extract_data(limit: int = 1000) -> list:
             logger.warning(f"Data validation error on attempt {attempt}: {e}")
 
         if attempt < MAX_RETRIES:
-            wait = RETRY_DELAY * attempt  # exponential backoff: 5s, 10s, 15s
+            wait = RETRY_DELAY * attempt  # linear backoff: 5s, 10s, 15s
             logger.info(f"Retrying in {wait} seconds...")
             time.sleep(wait)
 
