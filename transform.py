@@ -81,8 +81,7 @@ def transform_data(input_file: str) -> pd.DataFrame:
 
     _validate(df)
 
-    timestamp = datetime.utcnow().strftime('%Y%m%d_%H%M%S')
-    output_file = f"transformed_data_{timestamp}.csv"
+    output_file = f"transformed_data_latest.csv"
     df.to_csv(output_file, index=False)
 
     logger.info(f"Saved cleaned data → {output_file}")
