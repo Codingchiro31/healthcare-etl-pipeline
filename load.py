@@ -9,12 +9,15 @@ import pandas as pd
 from datetime import datetime
 from pathlib import Path
 from sqlalchemy import create_engine, text
+from dotenv import load_dotenv
 
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger(__name__)
+
+load_dotenv()
 
 DB_CONFIG = {
     'host':     os.environ.get('DB_HOST',     'localhost'),
